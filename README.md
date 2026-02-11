@@ -61,8 +61,6 @@ This ensures predictable, auditable, and enterprise-compliant resource naming.
 
 ---
 
-## Repository Structure
-
 terraform-gcp-sandbox-envs/
 │
 ├── modules/
@@ -98,9 +96,9 @@ terraform-gcp-sandbox-envs/
 │       └── terraform.tfvars
 │
 ├── screenshots/
-│
 ├── .gitignore
 └── README.md
+
 ```
 
 
