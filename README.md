@@ -66,23 +66,42 @@ This ensures predictable, auditable, and enterprise-compliant resource naming.
 terraform-gcp-sandbox-envs/
 │
 ├── modules/
-│ ├── network/
-│ │ ├── main.tf
-│ │ ├── variables.tf
-│ │ └── outputs.tf
-│ │
-│ └── compute/
-│ ├── main.tf
-│ ├── variables.tf
-│ └── outputs.tf
+│   ├── network/
+│   │   ├── main.tf
+│   │   ├── variables.tf
+│   │   └── outputs.tf
+│   │
+│   ├── compute/
+│   │   ├── main.tf
+│   │   ├── variables.tf
+│   │   └── outputs.tf
+│   │
+│   └── storage/
 │
 ├── envs/
-│ ├── dev/
-│ ├── test/
-│ └── prod/
+│   ├── dev/
+│   │   ├── backend.tf
+│   │   ├── main.tf
+│   │   ├── variables.tf
+│   │   └── terraform.tfvars
+│   │
+│   ├── test/
+│   │   ├── backend.tf
+│   │   ├── main.tf
+│   │   ├── variables.tf
+│   │   └── terraform.tfvars
+│   │
+│   └── prod/
+│       ├── backend.tf
+│       ├── main.tf
+│       ├── variables.tf
+│       └── terraform.tfvars
+│
+├── screenshots/
 │
 ├── .gitignore
 └── README.md
+```
 
 
 ---
