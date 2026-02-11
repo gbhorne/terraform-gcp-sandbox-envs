@@ -1,0 +1,6 @@
+project_id   = "playground-s-11-3d8045b7"
+environment  = "dev"
+region       = "us-central1"
+zone         = "us-central1-a"
+machine_type = "e2-medium"
+subnet_cidr  = "10.10.0.0/24"
