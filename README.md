@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository demonstrates a modular, sandbox-compliant Terraform implementation of fully isolated Dev, Test, and Prod environments on Google Cloud Platform. Each environment is provisioned using reusable Terraform modules with isolated remote state files stored in Google Cloud Storage.
+This repository demonstrates a modular Terraform implementation of fully isolated Dev, Test, and Prod environments on Google Cloud Platform. Each environment is provisioned using reusable Terraform modules with isolated remote state files stored in Google Cloud Storage.
 
 Patterns demonstrated: modular Terraform design, remote backend state separation, environment isolation without workspaces, CIDR segmentation strategy, provider version alignment, and real-world debugging with issue resolution.
 
@@ -31,7 +31,7 @@ This segmentation ensures clean IP isolation between environments and mirrors re
 All resources follow the pattern `<project>-<environment>-<region>-<resource>`. Example:
 
 ```
-playground-s-11-3d8045b7-prod-us-central1-vm
+your-project-id-prod-us-central1-vm
 ```
 
 This ensures predictable, auditable, and enterprise-compliant resource naming across all environments.
@@ -133,16 +133,16 @@ Each environment is deployed independently.
 After deployment the following resources should exist:
 
 **VPC Networks**
-- `playground-s-11-3d8045b7-dev-us-central1-vpc`
-- `playground-s-11-3d8045b7-test-us-central1-vpc`
-- `playground-s-11-3d8045b7-prod-us-central1-vpc`
+- `your-project-id-dev-us-central1-vpc`
+- `your-project-id-test-us-central1-vpc`
+- `your-project-id-prod-us-central1-vpc`
 
 **Subnets:** 10.10.0.0/24, 10.20.0.0/24, 10.30.0.0/24
 
 **VM Instances**
-- `playground-s-11-3d8045b7-dev-us-central1-vm`
-- `playground-s-11-3d8045b7-test-us-central1-vm`
-- `playground-s-11-3d8045b7-prod-us-central1-vm`
+- `your-project-id-dev-us-central1-vm`
+- `your-project-id-test-us-central1-vm`
+- `your-project-id-prod-us-central1-vm`
 
 Each VM is labeled with environment, application, owner, managed_by, and sandbox.
 
@@ -186,7 +186,7 @@ git config --global core.autocrlf true
 
 ## Estimated Cost
 
-Per environment: e2-medium VM (2 vCPU, 4GB RAM) approximately $25-30/month, 20GB persistent disk approximately $2-3/month, VPC/subnet/firewall at no additional cost. Total for all three environments running 24/7 is approximately $85-100/month. Lab and sandbox usage will be significantly lower.
+Per environment: e2-medium VM (2 vCPU, 4GB RAM) approximately $25-30/month, 20GB persistent disk approximately $2-3/month, VPC/subnet/firewall at no additional cost. Total for all three environments running 24/7 is approximately $85-100/month. Short-duration deployments will be significantly lower.
 
 ---
 
